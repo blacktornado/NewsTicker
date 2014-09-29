@@ -1,0 +1,190 @@
+<!--  Jquery Vertical NewsTicker//-->
+var ticker = function()
+{
+    setTimeout(function(){
+        $('#ticker li:first:not(.stop)').animate( {marginTop: '-120px'}, 1000, function()
+        {
+           var me = $(this);        
+
+           me
+            .clone(true)
+            .appendTo('ul#ticker')
+            .removeAttr('style')
+
+           me.remove(); 
+        });                                                
+        ticker();
+    }, 2000);
+};
+
+ticker();
+
+// simply toggle class on hover
+// animation will not run with `li` having this class
+
+$('#ticker li').hover(function() {
+    $(this).addClass('stop')
+}, function() {
+    $(this).removeClass('stop')
+});
+
+
+<html>
+
+<!-- Css //-->
+
+* {
+	margin: 0;
+	
+padding: 0;
+
+}
+
+body a:hover {
+	text-decoration: none;
+
+}
+
+body .hidden {
+	display: none;
+
+}
+
+body pre {
+	text-align: left;
+	padding: 2px;
+	background: #000000;
+	margin-bottom: 5px;
+}
+
+body ul {
+	list-style-type: none;
+}
+
+div.clear {
+	clear: both;
+}
+
+div.block {
+	 float: left; 
+
+margin-left:2px; border-left-style: solid;
+	border-left-width: 2px;
+	background-color: #FFFFCC;
+
+}
+
+div.block fieldset input.error {
+	border: 1px solid red;
+}
+
+div.block fieldset input.send {
+	border: 1px solid #666666;
+	padding: 3px 3px;
+	cursor: pointer;
+}
+
+div.block fieldset legend {
+	padding: 5px 5px;
+	font-weight: bold;
+}
+
+div.block fieldset p {
+	margin: 2px 0;
+}
+
+div.block fieldset label {
+	float: left;
+	width: 40px;
+}
+
+div.block fieldset label.error {
+	float: left;
+	margin-left: 5px;
+	color: red;
+}
+
+div#content {
+	padding-top: 2px;
+}
+
+div#content div.block {
+	margin-bottom: 10px;
+}
+
+div#info {
+padding-bottom: 10px;	
+}
+
+div#info.ok {
+	border-left-color: #C8FE2E;
+}
+
+div#info.otravez {
+	border-left-color: #DC7873;
+}
+
+div#info ul {
+	margin-top: 8px;
+}
+
+div#info ul li {
+	float: left;
+	margin-right: 5px;
+}
+
+div#info ul li a:hover img {
+	border: 2px solid #666;
+}
+
+div#info ul li img {
+	border: 2px solid #ccc;
+}
+
+ul#ticker {
+	width: 230px;
+	height: 200px;
+	overflow: hidden;
+}
+
+ul#ticker li p {
+	color: #0B4C5F;
+  float: left; 
+  margin-left: 10px;}
+
+<!-- Body part //-->
+<aside class="sidebar">
+			 <h2>Blog-News</h2>
+		     </aside>
+		
+  <div id="wrap">
+    <div id="head" class="block"></div>
+ 
+        <div id="content">
+            <div id="info" class="block">
+                <ul id="ticker">
+	
+            	<?php 
+						   $sql="select * from table_name order by col_name DESC limit 0,4 ";
+						   $res=mysql_query($sql);
+						   while($row=mysql_fetch_assoc($res)) {
+						   $sentence=$row['body'];
+						   ?> 
+               <li>
+		  
+		             <p>
+						  <?php 
+						  //for only 12 words extract from a paragraph to show in news blog
+                                                   $chck=implode(' ', array_slice(explode(' ', $sentence), 0, 12));
+						   echo '<b><u>'.$row['title'].'</u></b>';
+						   echo "</br>";
+						   echo '<i>'.$chck.'...!!'.'</i>';
+						   echo "</br>";
+						   //echo "</br>"; ?>
+		                  </p></li>
+                    <?php }?> 
+			     </ul>
+        			  </div>                     
+                      </div>		
+                      </div>
+                      </html>

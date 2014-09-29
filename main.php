@@ -2,7 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>Cegura Policy</title>
+<title>Black Newsticker</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <script type="text/javascript" src="js/jquery-1.4.min.js"></script>
 <script src="newsticker.js" type="text/javascript"></script>

@@ -1,0 +1,118 @@
+* {
+	margin: 0;
+	
+padding: 0;
+
+}
+
+body a:hover {
+	text-decoration: none;
+
+}
+
+body .hidden {
+	display: none;
+
+}
+
+body pre {
+	text-align: left;
+	padding: 2px;
+	background: #000000;
+	margin-bottom: 5px;
+}
+
+body ul {
+	list-style-type: none;
+}
+
+div.clear {
+	clear: both;
+}
+
+div.block {
+	 float: left; 
+
+margin-left:2px; border-left-style: solid;
+	border-left-width: 2px;
+	background-color: #FFFFCC;
+
+}
+
+div.block fieldset input.error {
+	border: 1px solid red;
+}
+
+div.block fieldset input.send {
+	border: 1px solid #666666;
+	padding: 3px 3px;
+	cursor: pointer;
+}
+
+div.block fieldset legend {
+	padding: 5px 5px;
+	font-weight: bold;
+}
+
+div.block fieldset p {
+	margin: 2px 0;
+}
+
+div.block fieldset label {
+	float: left;
+	width: 40px;
+}
+
+div.block fieldset label.error {
+	float: left;
+	margin-left: 5px;
+	color: red;
+}
+
+div#content {
+	padding-top: 2px;
+}
+
+div#content div.block {
+	margin-bottom: 10px;
+}
+
+div#info {
+padding-bottom: 10px;	
+}
+
+div#info.ok {
+	border-left-color: #C8FE2E;
+}
+
+div#info.otravez {
+	border-left-color: #DC7873;
+}
+
+div#info ul {
+	margin-top: 8px;
+}
+
+div#info ul li {
+	float: left;
+	margin-right: 5px;
+}
+
+div#info ul li a:hover img {
+	border: 2px solid #666;
+}
+
+div#info ul li img {
+	border: 2px solid #ccc;
+}
+
+ul#ticker {
+	width: 230px;
+	height: 200px;
+	overflow: hidden;
+}
+
+ul#ticker li p {
+	color: #0B4C5F;
+  float: left; 
+  margin-left: 10px;}
